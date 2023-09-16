@@ -115,4 +115,25 @@ body {
     .search-btn {
         display: none;
     }
+
+    .col {
+        display: flex;
+        text-align: left;
+        align-items: center;
+        /* padding: 0 8px; */
+    }
+
+    .col img {
+        width: 30px;
+        height: 30px;
+        margin: 6px 10px 0px -6px;
+    }
+    
+    .col .value {
+        font-size: 1rem;
+    }
+    
+    .col .name {
+        font-size: 0.9rem;
+    }
   }
