@@ -19,40 +19,46 @@ async function checkWeather(city) {
         document.querySelector('.humidity').innerHTML = data.main.humidity + "%";
         document.querySelector('.wind').innerHTML = data.wind.speed + "km/h";
         if (data.weather[0].main == "Clouds") {
-            weatherIcon.src = "./images/clouds.png";
-            card.style.background = "linear-gradient(135deg, #ae8ba1, #f2ecb6)";
+            weatherIcon.src = "./images/overcast-day.svg";
+            card.style.background = "linear-gradient(135deg, #ff3e9d, #0e1f40)";
         }
         else if (data.weather[0].main == "Rain") {
-            weatherIcon.src = "./images/rain.png";
+            weatherIcon.src = "./images/rain.svg";
             card.style.background = "linear-gradient(135deg, #13547a, #0396ff)";
         }
         else if (data.weather[0].main == "Drizzle") {
-            weatherIcon.src = "./images/drizzle.png";
+            weatherIcon.src = "./images/drizzle.svg";
             card.style.background = "linear-gradient(135deg, #6cd0ff, #1c2e4c)";
         }
         else if (data.weather[0].main == "Mist" || data.weather[0].main == "Fog") {
-            weatherIcon.src = "./images/mist.png";
+            weatherIcon.src = "./images/mist.svg";
             card.style.background = "linear-gradient(135deg, #014871, #a0ebcf)";
         }
         else if (data.weather[0].main == "Clear") {
-            weatherIcon.src = "./images/clear.png";
-            card.style.background = "linear-gradient(135deg, #f6ea41, #f048c6)";
+            weatherIcon.src = "./images/clear-day.svg";
+            card.style.background = "linear-gradient(135deg, #9f015e, #f9c929)";
         }
         else if (data.weather[0].main == "Snow") {
-            weatherIcon.src = "./images/snow.png";
+            weatherIcon.src = "./images/snow.svg";
             card.style.background = "linear-gradient(135deg, #ccfbff, #ef96c5)";
         }
         document.querySelector(".weather").style.display = "block";
         document.querySelector(".error").style.display = "none"
     }
-    
 }   
-searchBtn.addEventListener("click", ()=>{
-    checkWeather(searchInput.value)
+searchBtn.addEventListener("click", () => {
+    const city = searchInput.value.trim(); // Trim to remove leading/trailing spaces
+    if (city !== "") {
+        checkWeather(city);
+    }
 })
+
 searchInput.addEventListener("keypress", function(event){
     if (event.key === "Enter") {
         event.preventDefault();
-        checkWeather(searchInput.value)
+        const city = searchInput.value.trim();
+        if (city !== "") {
+            checkWeather(city);
+        }
     }
 })
