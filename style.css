@@ -2,7 +2,12 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
 }
 
 html {
@@ -64,6 +69,7 @@ body {
     width: 40%;
 }
 
+
 .weather .temp {
     font-size: 4rem;
 }
@@ -114,6 +120,13 @@ body {
     }
     .search-btn {
         display: none;
+    }
+
+    h1 {
+        font-size: 3rem!important;
+    }
+    h2 {
+        font-size: 1.8rem!important;
     }
 
     .col {
